@@ -26,13 +26,6 @@
         android:textOff="Start Service"
         android:textOn="Stop Service" />
 
-    <Button
-        android:id="@+id/b_quit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/toggle_service_status"
-        android:text="@string/quit" />
-
     <EditText
         android:id="@+id/t_keywords"
         android:layout_width="wrap_content"
@@ -63,5 +56,23 @@
 
         <requestFocus />
     </EditText>
+
+    <Button
+        android:id="@+id/b_quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/toggle_service_status"
+        android:layout_alignBottom="@+id/toggle_service_status"
+        android:layout_alignLeft="@+id/t_msg_id"
+        android:text="@string/quit" />
+
+    <Button
+        android:id="@+id/b_open_screenedMsgs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/b_quit"
+        android:layout_marginBottom="19dp"
+        android:layout_toRightOf="@+id/b_quit"
+        android:text="@string/title_activity_screened_msgs" />
 
 </RelativeLayout>

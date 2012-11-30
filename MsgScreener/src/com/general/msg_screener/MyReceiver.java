@@ -53,13 +53,13 @@ public class MyReceiver extends BroadcastReceiver {
     		{
     		if(msgContent.contains(storedMsgKeys) || senderId.equalsIgnoreCase(storedMsgId) )
     		{
-    			
+    			/*
     			try {
 					saveMsg(context,senderId+"\n"+msgContent+"\n");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
+				}*/
     			
     			abortBroadcast();
     			break;

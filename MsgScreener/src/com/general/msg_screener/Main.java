@@ -1,6 +1,7 @@
 package com.general.msg_screener;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -13,6 +14,8 @@ public class Main extends Activity
 {
 	
 	Button quitButton;
+	Button openScrMsgs;
+	
 	EditText msgId,msgKeys;
 	ToggleButton serviceStatus;
 	
@@ -57,6 +60,21 @@ public class Main extends Activity
     	        }
     	    }
     	});
+    	
+    	// setup Screened Msgs Button for opening 
+    	//  ScreenedMsgs activity when clicked
+    	openScrMsgs=(Button)findViewById(R.id.b_open_screenedMsgs);
+    	
+    	openScrMsgs.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) 
+			{
+				Intent openScrMsgInt=new Intent(Main.this,ScreenedMsgs.class);
+				startActivity(openScrMsgInt);
+				
+			}
+		});
     	
     	
 		// setup quit button
