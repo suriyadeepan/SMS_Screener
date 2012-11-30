@@ -10,5 +10,7 @@
     <string name="msg_id">Message ID</string>
     <string name="quit">Quit</string>
     <string name="msg_screener">Msg Screener</string>
+    <string name="title_activity_screened_msgs">Screened Messages</string>
+    <string name="back">Back</string>
 
 </resources>
