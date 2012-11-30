@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -136,4 +137,28 @@ public class Main extends Activity
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) 
+	{
+		switch(item.getItemId())
+		{
+		case R.id.m_open_scr_msgs:
+			startActivity(new Intent(this,ScreenedMsgs.class));
+			return true;
+			
+		case R.id.m_quit:
+			finish();
+			return true;
+		
+		default:
+			return super.onOptionsItemSelected(item);
+		
+		}
+		
+		
+		
+	}
+	
+	
 }

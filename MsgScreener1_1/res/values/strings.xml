@@ -12,5 +12,8 @@
     <string name="msg_screener">Msg Screener</string>
     <string name="title_activity_screened_msgs">Screened Messages</string>
     <string name="back">Back</string>
+    <string name="about">About Us</string>
+    <string name="spam">Spam</string>
+    <string name="database">Database</string>
 
 </resources>
