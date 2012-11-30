@@ -53,13 +53,13 @@ public class MyReceiver extends BroadcastReceiver {
     		{
     		if(msgContent.contains(storedMsgKeys) || senderId.equalsIgnoreCase(storedMsgId) )
     		{
-    			/*
+    			
     			try {
-					saveMsg(context,senderId+"\n"+msgContent+"\n");
+					saveMsg(context,senderId,msgContent);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}*/
+				}
     			
     			abortBroadcast();
     			break;
@@ -73,17 +73,21 @@ public class MyReceiver extends BroadcastReceiver {
     }// end of onReceive method
     
     
-    public void saveMsg(Context context, String message) throws IOException 
+    public void saveMsg(Context context, String msgId,String msgContent) throws IOException 
     {
 
         FileOutputStream FoutS = null;
         OutputStreamWriter outSW = null;
         	
-				FoutS = context.openFileOutput("/mnt/sdcard/my-file.txt", Context.MODE_PRIVATE);
+				FoutS = context.openFileOutput("my-db-file.txt", Context.MODE_PRIVATE);
 			
 				outSW = new OutputStreamWriter(FoutS);
 	    
-				outSW.write(message);
+				outSW.append(msgId);
+				outSW.append("\n");
+				outSW.append(msgContent);
+				outSW.append("\n\n");
+				
 			
 		        outSW.flush();
         
