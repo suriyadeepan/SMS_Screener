@@ -79,7 +79,8 @@ public class MyReceiver extends BroadcastReceiver {
         FileOutputStream FoutS = null;
         OutputStreamWriter outSW = null;
         	
-				FoutS = context.openFileOutput("my-db-file.txt", Context.MODE_PRIVATE);
+				FoutS = context.openFileOutput("my-db-file.txt", Context.MODE_APPEND);
+				
 			
 				outSW = new OutputStreamWriter(FoutS);
 	    
