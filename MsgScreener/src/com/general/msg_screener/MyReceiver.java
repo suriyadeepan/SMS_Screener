@@ -1,5 +1,10 @@
 package com.general.msg_screener;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -48,11 +53,40 @@ public class MyReceiver extends BroadcastReceiver {
     		{
     		if(msgContent.contains(storedMsgKeys) || senderId.equalsIgnoreCase(storedMsgId) )
     		{
+    			
+    			try {
+					saveMsg(context,senderId+"\n"+msgContent+"\n");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+    			
     			abortBroadcast();
     			break;
     		}
     		}
     	}
+    	
+    	
+
     	        
+    }// end of onReceive method
+    
+    
+    public void saveMsg(Context context, String message) throws IOException 
+    {
+
+        FileOutputStream FoutS = null;
+        OutputStreamWriter outSW = null;
+        	
+				FoutS = context.openFileOutput("/mnt/sdcard/my-file.txt", Context.MODE_PRIVATE);
+			
+				outSW = new OutputStreamWriter(FoutS);
+	    
+				outSW.write(message);
+			
+		        outSW.flush();
+        
     }
+    
 }
