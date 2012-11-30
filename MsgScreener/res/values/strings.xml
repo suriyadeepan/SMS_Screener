@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">MsgScreener</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Home Page</string>
+    <string name="keywords">Keywords</string>
+    <string name="empty"></string>
+    <string name="service_status">Service Status</string>
+    <string name="msg_id">Message ID</string>
+    <string name="quit">Quit</string>
+    <string name="msg_screener">Msg Screener</string>
+
+</resources>
