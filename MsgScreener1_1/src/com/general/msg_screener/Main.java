@@ -14,10 +14,10 @@ public class Main extends Activity
 {
 	
 	Button quitButton;
-	Button openScrMsgs;
+	Button updateButton;
 	
 	EditText msgId,msgKeys;
-	ToggleButton serviceStatus;
+	
 	
 	static String smsId=null;
 	static String smsKeys=null;
@@ -38,7 +38,26 @@ public class Main extends Activity
     	// setup the Edittexts
     	msgId=(EditText)findViewById(R.id.t_msg_id);
     	msgKeys=(EditText)findViewById(R.id.t_keywords);
+    
+    	// setup update button
+    	updateButton=(Button)findViewById(R.id.b_update);
     	
+    	updateButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) 
+			{
+				if(!msgId.getText().toString().equals("") || !msgKeys.toString().equals(""))
+				{
+				smsId=msgId.getText().toString();
+	        	smsKeys=msgKeys.getText().toString();
+				}
+				
+			}
+		});
+    	
+    	
+    	/*
     	// setup togglebutton
     	serviceStatus=(ToggleButton)findViewById(R.id.toggle_service_status);
     	
@@ -59,11 +78,11 @@ public class Main extends Activity
     	            
     	        }
     	    }
-    	});
+    	});*/
     	
     	// setup Screened Msgs Button for opening 
     	//  ScreenedMsgs activity when clicked
-    	openScrMsgs=(Button)findViewById(R.id.b_open_screenedMsgs);
+    	/*openScrMsgs=(Button)findViewById(R.id.b_open_screenedMsgs);
     	
     	openScrMsgs.setOnClickListener(new View.OnClickListener() {
 			
@@ -74,7 +93,7 @@ public class Main extends Activity
 				startActivity(openScrMsgInt);
 				
 			}
-		});
+		});*/
     	
     	
 		// setup quit button
