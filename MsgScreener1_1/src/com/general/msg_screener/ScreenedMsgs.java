@@ -54,7 +54,7 @@ public class ScreenedMsgs extends Activity
     	                 
     	      String line;
     	 
-    	      scrMsgs.setText("");
+    	      scrMsgs.setText("\n\n\n");
     	      
     	      // read every line of the file into the line-variable, on line at the time
     	      while (( line = buffreader.readLine()) != null) {
@@ -78,7 +78,7 @@ public class ScreenedMsgs extends Activity
     	    
     	    String temp=fileContent;
     	    
-    	    scrMsgs.setText(fileContent);
+    	    scrMsgs.append(fileContent);
     	    /*
     	    int msgNum=temp.length()-temp.replace("@","").length();
     	    
