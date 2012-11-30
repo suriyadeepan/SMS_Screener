@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -136,4 +137,27 @@ public class ScreenedMsgs extends Activity
         getMenuInflater().inflate(R.menu.screened_msgs, menu);
         return true;
     }
+
+
+
+	@Override
+	public boolean onMenuItemSelected(int featureId, MenuItem item) 
+	{
+		
+		switch(item.getItemId())
+		{
+		
+		case R.id.m_quit:
+		finish();
+		return true;
+		
+		
+		default:
+		return super.onMenuItemSelected(featureId, item);
+		
+		}
+	}
+	
+	
+	
 }

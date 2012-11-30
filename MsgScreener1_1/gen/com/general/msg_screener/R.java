@@ -32,7 +32,6 @@ public final class R {
         public static final int m_db=0x7f070009;
         public static final int m_open_scr_msgs=0x7f070006;
         public static final int m_quit=0x7f070007;
-        public static final int menu_settings=0x7f07000a;
         public static final int t_keywords=0x7f070000;
         public static final int t_msg_id=0x7f070001;
         public static final int t_screened_msgs=0x7f070004;
