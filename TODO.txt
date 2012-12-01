@@ -1,8 +1,8 @@
 30Nov2012 - Fri - 9:10PM
-* Display Toast wherever necessary
-* Display Dialog box wherever required - like while quitting
-* Add dynamic nature to button - react when pressed - make sound when pressed
-* store keywords in database
-* create activities for DB and About
-* Change icon of App
-* A better way of displaying screened msgs - extract data from files using seperators
+[ ] Display Toast wherever necessary
+[ ] Display Dialog box wherever required - like while quitting
+[ ] Add dynamic nature to button - react when pressed - make sound when pressed
+[ ] store keywords in database
+[ ] create activities for DB and About
+[ ] Change icon of App
+[ ] A better way of displaying screened msgs - extract data from files using seperators
