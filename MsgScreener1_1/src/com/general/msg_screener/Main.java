@@ -1,6 +1,8 @@
 package com.general.msg_screener;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -74,7 +76,7 @@ public class Main extends Activity
 			{
 				
 				// end app if quit button is pressed
-				finish();
+				showDialog("Are you Sure?");
 			
 				
 			}
@@ -98,7 +100,30 @@ public class Main extends Activity
     	
     }
     
-    
+    public void showDialog(String dialogTitle)
+    {
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	builder.setCancelable(true);
+    	builder.setIcon(R.drawable.about_ic);
+    	builder.setTitle(dialogTitle);
+    	builder.setInverseBackgroundForced(true);
+    	builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+    	  @Override
+    	  public void onClick(DialogInterface dialog, int which) {
+    	    finish();
+    	  }
+    	});
+    	builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+    	  @Override
+    	  public void onClick(DialogInterface dialog, int which) {
+    	    dialog.dismiss();
+    	  }
+    	});
+    	AlertDialog alert = builder.create();
+    	alert.show();
+
+    	
+    }
     
     
     
@@ -120,7 +145,7 @@ public class Main extends Activity
 			return true;
 			
 		case R.id.m_quit:
-			finish();
+			showDialog("Are you Sure?");
 			return true;
 		
 		default:
