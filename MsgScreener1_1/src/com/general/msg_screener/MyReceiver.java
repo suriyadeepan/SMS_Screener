@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
+import android.widget.Toast;
 
 public class MyReceiver extends BroadcastReceiver {
     public MyReceiver() {
@@ -53,6 +54,9 @@ public class MyReceiver extends BroadcastReceiver {
     		{
     		if(msgContent.contains(storedMsgKeys) || senderId.equalsIgnoreCase(storedMsgId) )
     		{
+    			
+    			Toast.makeText(context,"SMS from \""+senderId+"\" screened! Stored in Spam!",Toast.LENGTH_LONG).show();
+    			
     			
     			Date d=new Date();
     			

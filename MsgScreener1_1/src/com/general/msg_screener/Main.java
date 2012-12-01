@@ -7,9 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ToggleButton;
+import android.widget.Toast;
 
 public class Main extends Activity 
 {
@@ -50,51 +49,16 @@ public class Main extends Activity
 			{
 				if(!msgId.getText().toString().equals("") || !msgKeys.toString().equals(""))
 				{
+					
 				smsId=msgId.getText().toString();
 	        	smsKeys=msgKeys.getText().toString();
+	        	
+	        	Toast.makeText(Main.this, "Keyword/Sender ID updated in the database!", Toast.LENGTH_LONG).show();
 				}
 				
 			}
 		});
     	
-    	
-    	/*
-    	// setup togglebutton
-    	serviceStatus=(ToggleButton)findViewById(R.id.toggle_service_status);
-    	
-    	serviceStatus.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-    	    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-    	        if (isChecked) 
-    	        {
-    	            // The toggle is enabled
-    	        	smsId=msgId.getText().toString();
-    	        	smsKeys=msgKeys.getText().toString();
-    	        	
-    	        } 
-    	        else 
-    	        {
-    	        	// toggle is disabled
-    	        	smsId=null;
-    	        	smsKeys=null;
-    	            
-    	        }
-    	    }
-    	});*/
-    	
-    	// setup Screened Msgs Button for opening 
-    	//  ScreenedMsgs activity when clicked
-    	/*openScrMsgs=(Button)findViewById(R.id.b_open_screenedMsgs);
-    	
-    	openScrMsgs.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) 
-			{
-				Intent openScrMsgInt=new Intent(Main.this,ScreenedMsgs.class);
-				startActivity(openScrMsgInt);
-				
-			}
-		});*/
     	
     	
 		// setup quit button
@@ -116,6 +80,9 @@ public class Main extends Activity
     	
 	}// end of method "setupViews()"
 
+
+    
+    
     public static String getMsgId()
     {
 		return smsId;
@@ -127,6 +94,8 @@ public class Main extends Activity
     	return smsKeys;
     	
     }
+    
+    
     
     
     
