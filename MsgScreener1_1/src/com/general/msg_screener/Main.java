@@ -47,7 +47,7 @@ public class Main extends Activity
 			@Override
 			public void onClick(View arg0) 
 			{
-				if(!msgId.getText().toString().equals("") || !msgKeys.toString().equals(""))
+				if( !msgId.getText().toString().equals("") || !msgKeys.getText().toString().equals("") )
 				{
 					
 				smsId=msgId.getText().toString();
@@ -55,6 +55,9 @@ public class Main extends Activity
 	        	
 	        	Toast.makeText(Main.this, "Keyword/Sender ID updated in the database!", Toast.LENGTH_LONG).show();
 				}
+				
+				else
+					Toast.makeText(Main.this, "Verify your Keyword/Sender ID!", Toast.LENGTH_LONG).show();
 				
 			}
 		});
