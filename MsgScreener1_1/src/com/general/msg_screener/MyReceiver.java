@@ -8,11 +8,16 @@ import java.util.Date;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.widget.Toast;
 
-public class MyReceiver extends BroadcastReceiver {
+public class MyReceiver extends BroadcastReceiver 
+{
+	
+	static String fileName="keys";
+	
     public MyReceiver() {
     }
 
@@ -39,6 +44,13 @@ public class MyReceiver extends BroadcastReceiver {
     		    		
     	}
     	
+    	// get the keys stored in preferences file
+    	SharedPreferences sharedPrefObj=context.getSharedPreferences(fileName,0);
+    	String keysAtDb=sharedPrefObj.getString("34", "Unable to retreive keys!");
+    	String idsAtDb=sharedPrefObj.getString("43", "Unable to retreive ID's!");
+    	
+    	
+    	
     	// update the text box in the main layout
     	//  by calling the static function in the
     	//   main activity
@@ -47,12 +59,32 @@ public class MyReceiver extends BroadcastReceiver {
     		String senderId=msg.getOriginatingAddress();
     		String msgContent=msg.getMessageBody();
     		
-    		String storedMsgId=Main.getMsgId();
-    		String storedMsgKeys=Main.getMsgKeys();
+    		//String storedMsgId=Main.getMsgId();
+    		//String storedMsgKeys=Main.getMsgKeys();
     		
-    		if((storedMsgId!=null || storedMsgKeys!=null))
+    		String[] keys=keysAtDb.split(" ");
+    		String[] ids=idsAtDb.split(" ");
+    		
+    		boolean msgStatus=false;
+    		
+    		for(int i=0;i<keys.length;i++)
     		{
-    		if(msgContent.contains(storedMsgKeys) || senderId.equalsIgnoreCase(storedMsgId) )
+    			if(msgContent.contains(keys[i]))
+    				msgStatus=true;
+    		}
+    		
+    		for(int i=0;i<ids.length;i++)
+    		{
+    			if(senderId.contains(ids[i]))
+    				msgStatus=true;
+    		}
+    		
+    		
+    		
+    		//if((storedMsgId!=null || storedMsgKeys!=null))
+    		//{
+    		//if(msgContent.contains(storedMsgKeys) || senderId.contains(storedMsgId) )
+    		if(msgStatus)
     		{
     			
     			Toast.makeText(context,"SMS from \""+senderId+"\" screened! Stored in Spam!",Toast.LENGTH_LONG).show();
@@ -70,8 +102,9 @@ public class MyReceiver extends BroadcastReceiver {
     			abortBroadcast();
     			break;
     		}
-    		}
-    	}
+    		
+    		
+    	}// end of for(SmsMessage msg:sms)
     	
     	
 

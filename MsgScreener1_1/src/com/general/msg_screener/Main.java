@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,12 +25,30 @@ public class Main extends Activity
 	static String smsId=null;
 	static String smsKeys=null;
 	
+	SharedPreferences sharedPrefObj;
+	static String fileName="keys";
+	static String firstKey="zombie";
+	
     
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
         setupViews();
+        
+        sharedPrefObj=getSharedPreferences(fileName, 0);
+        
+        if(!sharedPrefObj.contains("34") || !sharedPrefObj.contains("43"))
+        {
+        	Toast.makeText(Main.this, "Preference File doesn't exist! Initialization taking place...", Toast.LENGTH_SHORT).show();
+        	
+        	SharedPreferences.Editor editor=sharedPrefObj.edit();
+        	editor.putString("34",firstKey);
+        	editor.commit();
+        	editor.putString("43",firstKey);
+        	editor.commit();
+        }
+        
         
     }
 
@@ -54,6 +73,22 @@ public class Main extends Activity
 					
 				smsId=msgId.getText().toString();
 	        	smsKeys=msgKeys.getText().toString();
+	        	
+	        	
+	        	// removing spaces
+	        	smsKeys.replace(" ","");
+	        	smsId.replace(" ","");
+	        	
+	        	// append sms key to preference file
+	        	sharedPrefObj=getSharedPreferences(fileName, 0);
+	        	String keysAtDb=sharedPrefObj.getString("34", "Unable to retreive keys!");
+	        	SharedPreferences.Editor editor=sharedPrefObj.edit();
+	        	editor.putString("34",keysAtDb+" "+smsKeys);
+	        	editor.commit();
+	        	
+	        	// append sms ID to preference file
+	        	editor.putString("43", sharedPrefObj.getString("43", "Unable to retreive IDs!")+ " "+smsId);
+	        	editor.commit();
 	        	
 	        	Toast.makeText(Main.this, "Keyword/Sender ID updated in the database!", Toast.LENGTH_LONG).show();
 				}
@@ -146,6 +181,13 @@ public class Main extends Activity
 			
 		case R.id.m_quit:
 			showDialog("Are you Sure?");
+			return true;
+			
+		case R.id.m_db:
+			sharedPrefObj=getSharedPreferences(fileName, 0);
+			String keysAtDb=sharedPrefObj.getString("34", "Couldn't get son!");
+			String idsAtDb=sharedPrefObj.getString("43", "Couldn't get son!");
+			Toast.makeText(Main.this,"Keys @ DB: "+keysAtDb+"\n IDs @ DB: "+idsAtDb, Toast.LENGTH_LONG).show();
 			return true;
 		
 		default:
