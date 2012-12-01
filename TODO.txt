@@ -6,3 +6,6 @@
 [ ] create activities for DB and About
 [ ] Change icon of App
 [ ] A better way of displaying screened msgs - extract data from files using seperators
+
+01Dec2012 - Sat - 3:12PM
+[ ] Make a startup screen
