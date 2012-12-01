@@ -1,6 +1,6 @@
 30Nov2012 - Fri - 9:10PM
 [*] Display Toast wherever necessary
-[ ] Display Dialog box wherever required - like while quitting
+[*] Display Dialog box wherever required - like while quitting
 [ ] Add dynamic nature to button - react when pressed - make sound when pressed
 [ ] store keywords in database
 [ ] create activities for DB and About
