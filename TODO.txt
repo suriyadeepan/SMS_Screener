@@ -9,3 +9,4 @@
 
 01Dec2012 - Sat - 3:12PM
 [ ] Make a startup screen
+[ ] Improve the look of About, DB and spam pages
