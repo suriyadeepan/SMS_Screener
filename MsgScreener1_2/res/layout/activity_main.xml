@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <EditText
+        android:id="@+id/t_keywords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="137dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/t_msg_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/t_keywords"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="67dp"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/b_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="18dp"
+        android:background="@drawable/update_butt"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/b_quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/b_update"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/b_update"
+        android:background="@drawable/close_butt"
+        android:gravity="center" />
+
+</RelativeLayout>
