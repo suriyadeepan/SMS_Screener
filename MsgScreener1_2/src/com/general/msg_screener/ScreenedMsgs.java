@@ -24,6 +24,8 @@ public class ScreenedMsgs extends Activity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
+        
+        
         	// setup fullscreen
         /***************************************************/
         requestWindowFeature(Window.FEATURE_NO_TITLE);

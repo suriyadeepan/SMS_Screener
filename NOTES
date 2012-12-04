@@ -1,0 +1,3 @@
+* LogCat usage:
+
+	$ adb logcat TAG:* *:S

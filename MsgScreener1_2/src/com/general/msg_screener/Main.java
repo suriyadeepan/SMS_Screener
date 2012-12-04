@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,6 +36,9 @@ public class Main extends Activity
 	SharedPreferences sharedPrefObj;
 	static String fileName="keys";
 	static String firstKey="zombie";
+
+	// log variables
+	public static final String Tag="Message_Screener.Main";
 	
     /***********************************************/
 	
@@ -45,12 +49,16 @@ public class Main extends Activity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
+        Log.i(Tag, "OnCreate - Entered ");
+        
 
         // setup fullscreen
         /***************************************************/
+        
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
         		WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        Log.i(Tag, "OnCreate - Setup Fullscreen");
         /*************************************************/
         
         
@@ -71,6 +79,9 @@ public class Main extends Activity
 
     private void initPreferenceFile() 
     {
+    	
+    	Log.i(Tag, "initPreferenceFile - entered");
+    	
     	// instantiate shared preferences object with the filename
     	sharedPrefObj=getSharedPreferences(fileName, 0);
         
@@ -87,6 +98,7 @@ public class Main extends Activity
         	editor.commit();
         }
 		
+        
 		
 	}// end of initPreferenceFile() method...
 
@@ -96,6 +108,8 @@ public class Main extends Activity
     //  setup here
     private void setupViews() 
     {
+    	Log.i(Tag, "setupViews() - Entered ");
+    	
     	// setup the Edittexts
     	msgId=(EditText)findViewById(R.id.t_msg_id);
     	msgKeys=(EditText)findViewById(R.id.t_keywords);
@@ -111,6 +125,8 @@ public class Main extends Activity
 			public void onClick(View arg0) 
 			{
 				
+				Log.i(Tag, "setupViews-updateButton-onClick- entered");
+				
 				// if atleast anyone of the Edittexts is not empty
 				//  proceed
 				if( !msgId.getText().toString().equals("") || !msgKeys.getText().toString().equals("") )
@@ -120,6 +136,8 @@ public class Main extends Activity
 				smsId=msgId.getText().toString();
 	        	smsKeys=msgKeys.getText().toString();
 	        	
+	        	
+	        	Log.i(Tag, "setupViews-updateButton-onClick- Variables: \n smsId = "+smsId+"\n smsKeys =  "+smsKeys);
 	        	
 	        	// removing empty spaces
 	        	smsKeys.replace(" ","");
@@ -174,7 +192,7 @@ public class Main extends Activity
 			
 			public void onClick(View arg0) 
 			{
-				
+				Log.i(Tag, "setupViews-quitButton-onClick- entered");
 				// show confirmation dialog if quit button
 				//  is pressed
 				showDialog("Are you Sure?");
@@ -192,6 +210,8 @@ public class Main extends Activity
 	private void updateDB(SharedPreferences sharedPrefObj, String key,
 			String dataString){
 	
+		Log.i(Tag, "updateDB- entered");
+		
 		// retreive the data present in the pref file with key 
 		//  append it to the current String and update data @
 		//   the pref file
@@ -202,7 +222,9 @@ public class Main extends Activity
     	editor.putString(key,dataAtDb+" "+dataString);
     	editor.commit();
 		
-		
+		Log.i(Tag,"updateDB- Variables: \ndataAtDb = "+dataAtDb);
+    	
+    	
 	}// end of updateDB() method...
     
 	
@@ -210,6 +232,8 @@ public class Main extends Activity
 	//  and shows it
     public void showDialog(String dialogTitle)
     {
+    	Log.i(Tag, "showDialog- entered");
+    	
     	AlertDialog.Builder builder = new AlertDialog.Builder(this);
     	builder.setCancelable(true);
     	builder.setIcon(R.drawable.about_ic);
@@ -218,12 +242,14 @@ public class Main extends Activity
     	builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
     	  @Override
     	  public void onClick(DialogInterface dialog, int which) {
+    		  Log.i(Tag, "setupViews-positive_button-onClick- entered");
     	    finish();
     	  }
     	});
     	builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
     	  @Override
     	  public void onClick(DialogInterface dialog, int which) {
+    		  Log.i(Tag, "setupViews-negative_button-onClick- entered");
     	    dialog.dismiss();
     	  }
     	});
@@ -239,6 +265,7 @@ public class Main extends Activity
     
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
+		Log.i(Tag, "onCreateOptionsMenu- entered");
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
@@ -247,6 +274,7 @@ public class Main extends Activity
 	//  by the user
 	public boolean onOptionsItemSelected(MenuItem item) 
 	{
+		Log.i(Tag, "onOptionsItemSelected- entered");
 		
 		// a switch case for selecting the operation 
 		//  based on id of menu item
@@ -255,19 +283,24 @@ public class Main extends Activity
 		
 			// menu item => SPAM
 		case R.id.m_open_scr_msgs:
+			Log.i(Tag, "onOptionsItemSelected-m_open_scr_msgs selected");
 			startActivity(new Intent(this,ScreenedMsgs.class));
 			return true;
 			
 			// menu item => QUIT
 		case R.id.m_quit:
+			Log.i(Tag, "onOptionsItemSelected-m_quit selected");
 			showDialog("Are you Sure?");
 			return true;
 			
 			// menu item => DATABASE
 		case R.id.m_db:
+			Log.i(Tag, "onOptionsItemSelected-m_db selected");
 			sharedPrefObj=getSharedPreferences(fileName, 0);
 			String keysAtDb=sharedPrefObj.getString("34", "Couldn't get son!");
 			String idsAtDb=sharedPrefObj.getString("43", "Couldn't get son!");
+			Log.i(Tag, "onOptionsItemSelected-m_db Variables: \n keysAtDb = "+keysAtDb+
+					"\n idsAtDb = "+idsAtDb);
 			Toast.makeText(Main.this,"Keys @ DB: "+keysAtDb+"\n IDs @ DB: "+idsAtDb, Toast.LENGTH_LONG).show();
 			return true;
 		
