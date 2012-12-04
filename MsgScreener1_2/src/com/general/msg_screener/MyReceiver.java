@@ -22,6 +22,7 @@ public class MyReceiver extends BroadcastReceiver
     }
 
     @Override
+    // called when an Intent broadcast is received...
     public void onReceive(Context context, Intent intent) 
     {
     	
@@ -59,14 +60,14 @@ public class MyReceiver extends BroadcastReceiver
     		String senderId=msg.getOriginatingAddress();
     		String msgContent=msg.getMessageBody();
     		
-    		//String storedMsgId=Main.getMsgId();
-    		//String storedMsgKeys=Main.getMsgKeys();
     		
     		String[] keys=keysAtDb.split(" ");
     		String[] ids=idsAtDb.split(" ");
     		
     		boolean msgStatus=false;
     		
+    		
+    		// check if the 
     		for(int i=0;i<keys.length;i++)
     		{
     			if(msgContent.contains(keys[i]))

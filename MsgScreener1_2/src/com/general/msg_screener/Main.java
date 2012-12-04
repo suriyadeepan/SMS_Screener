@@ -18,20 +18,30 @@ import android.widget.Toast;
 public class Main extends Activity 
 {
 	
+	/************************************************/
+	// Variable Declaration
+	
+	// UI components
 	Button quitButton;
 	Button updateButton;
-	
 	EditText msgId,msgKeys;
 	
-	
+	// Temporary storage of ID and filter Keywords
 	static String smsId=null;
 	static String smsKeys=null;
 	
+	
+	// Shared Preferences 
 	SharedPreferences sharedPrefObj;
 	static String fileName="keys";
 	static String firstKey="zombie";
 	
-    
+    /***********************************************/
+	
+	
+	
+	// onCreate Method - called once the app is started
+	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
@@ -46,10 +56,26 @@ public class Main extends Activity
         
         setContentView(R.layout.activity_main);
         
+        
+        // UI components - initialization and adding listeners...
         setupViews();
         
-        sharedPrefObj=getSharedPreferences(fileName, 0);
         
+        // checks if the application is running for the first time
+        // if so, initializes the preferences
+        initPreferenceFile();
+        
+    }// end of onCreate() method...
+    
+    
+
+    private void initPreferenceFile() 
+    {
+    	// instantiate shared preferences object with the filename
+    	sharedPrefObj=getSharedPreferences(fileName, 0);
+        
+    	// check if data exists @ keys 34,43
+    	// if not store dummy String @ 34,43
         if(!sharedPrefObj.contains("34") || !sharedPrefObj.contains("43"))
         {
         	Toast.makeText(Main.this, "Preference File doesn't exist! Initialization taking place...", Toast.LENGTH_SHORT).show();
@@ -60,11 +86,13 @@ public class Main extends Activity
         	editor.putString("43",firstKey);
         	editor.commit();
         }
-        
-        
-    }
+		
+		
+	}// end of initPreferenceFile() method...
 
-    // contents of the page - Views are
+    
+    
+	// contents of the page - Views are
     //  setup here
     private void setupViews() 
     {
@@ -72,6 +100,8 @@ public class Main extends Activity
     	msgId=(EditText)findViewById(R.id.t_msg_id);
     	msgKeys=(EditText)findViewById(R.id.t_keywords);
     
+    	
+    	
     	// setup update button
     	updateButton=(Button)findViewById(R.id.b_update);
     	
@@ -80,19 +110,35 @@ public class Main extends Activity
 			@Override
 			public void onClick(View arg0) 
 			{
+				
+				// if atleast anyone of the Edittexts is not empty
+				//  proceed
 				if( !msgId.getText().toString().equals("") || !msgKeys.getText().toString().equals("") )
 				{
 					
+				// get the text @ Edittexts
 				smsId=msgId.getText().toString();
 	        	smsKeys=msgKeys.getText().toString();
 	        	
 	        	
-	        	// removing spaces
+	        	// removing empty spaces
 	        	smsKeys.replace(" ","");
 	        	smsId.replace(" ","");
 	        	
 	        	// append sms key to preference file
+	        	// instatntiate sharedPrefObj
 	        	sharedPrefObj=getSharedPreferences(fileName, 0);
+	        	
+	        	
+	        	// this method appends current smsKey to the pref file
+	        	updateDB(sharedPrefObj,"34",smsKeys);
+	        	
+	        	// update smsID
+	        	updateDB(sharedPrefObj,"43",smsId);
+	        	
+	        	 
+	        	 
+	        	/* 
 	        	String keysAtDb=sharedPrefObj.getString("34", "Unable to retreive keys!");
 	        	SharedPreferences.Editor editor=sharedPrefObj.edit();
 	        	editor.putString("34",keysAtDb+" "+smsKeys);
@@ -102,14 +148,21 @@ public class Main extends Activity
 	        	editor.putString("43", sharedPrefObj.getString("43", "Unable to retreive IDs!")+ " "+smsId);
 	        	editor.commit();
 	        	
+	        	*/
+	        	
+	        	// inform the user that the keyword/ID is updated in DB
 	        	Toast.makeText(Main.this, "Keyword/Sender ID updated in the database!", Toast.LENGTH_LONG).show();
+	        	
+	        	
 				}
 				
+				// if both fiels are empty, inform the user that it is so
 				else
 					Toast.makeText(Main.this, "Verify your Keyword/Sender ID!", Toast.LENGTH_LONG).show();
 				
 			}
-		});
+			
+		});// end of listener of updateButton
     	
     	
     	
@@ -122,7 +175,8 @@ public class Main extends Activity
 			public void onClick(View arg0) 
 			{
 				
-				// end app if quit button is pressed
+				// show confirmation dialog if quit button
+				//  is pressed
 				showDialog("Are you Sure?");
 			
 				
@@ -133,20 +187,27 @@ public class Main extends Activity
 	}// end of method "setupViews()"
 
 
-    
-    
-    public static String getMsgId()
-    {
-		return smsId;
-    		
-    }
-    
-    public static String getMsgKeys()
-    {
-    	return smsKeys;
+	// this method updates the filter keywords or Sender ID @
+	//  the preference file
+	private void updateDB(SharedPreferences sharedPrefObj, String key,
+			String dataString){
+	
+		// retreive the data present in the pref file with key 
+		//  append it to the current String and update data @
+		//   the pref file
+		
+		String dataAtDb=sharedPrefObj.getString(key, "Unable to retreive keys!");
+    	SharedPreferences.Editor editor=sharedPrefObj.edit();
     	
-    }
+    	editor.putString(key,dataAtDb+" "+dataString);
+    	editor.commit();
+		
+		
+	}// end of updateDB() method...
     
+	
+	// this method creates a confirmation dialogue 
+	//  and shows it
     public void showDialog(String dialogTitle)
     {
     	AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -170,7 +231,7 @@ public class Main extends Activity
     	alert.show();
 
     	
-    }
+    }// end of showDialog() method...
     
     
     
@@ -182,19 +243,27 @@ public class Main extends Activity
         return true;
     }
 
-	@Override
+	// this method is called when a MENU item is selected 
+	//  by the user
 	public boolean onOptionsItemSelected(MenuItem item) 
 	{
+		
+		// a switch case for selecting the operation 
+		//  based on id of menu item
 		switch(item.getItemId())
 		{
+		
+			// menu item => SPAM
 		case R.id.m_open_scr_msgs:
 			startActivity(new Intent(this,ScreenedMsgs.class));
 			return true;
 			
+			// menu item => QUIT
 		case R.id.m_quit:
 			showDialog("Are you Sure?");
 			return true;
 			
+			// menu item => DATABASE
 		case R.id.m_db:
 			sharedPrefObj=getSharedPreferences(fileName, 0);
 			String keysAtDb=sharedPrefObj.getString("34", "Couldn't get son!");
@@ -209,7 +278,7 @@ public class Main extends Activity
 		
 		
 		
-	}
+	}// end of method onOptionsItemSelected()...
 	
 	
-}
+}// END OF ACTIVITY..

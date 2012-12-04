@@ -120,7 +120,7 @@ public class ScreenedMsgs extends Activity
 	}
 
 
-
+    
 	private void setupViews()
     {
     	
