@@ -33,7 +33,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="18dp"
-        android:background="@drawable/update_butt"
+        android:background="@drawable/butt_update"
         android:gravity="center" />
 
     <Button
@@ -43,7 +43,7 @@
         android:layout_alignBottom="@+id/b_update"
         android:layout_marginLeft="18dp"
         android:layout_toRightOf="@+id/b_update"
-        android:background="@drawable/close_butt"
+        android:background="@drawable/butt_quit"
         android:gravity="center" />
 
 </RelativeLayout>
