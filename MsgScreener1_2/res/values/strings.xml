@@ -15,5 +15,9 @@
     <string name="about">About Us</string>
     <string name="spam">Spam</string>
     <string name="database">Database</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="one">1</string>
+    <string name="page_num">Page 1</string>
 
 </resources>

@@ -36,6 +36,10 @@ public class Main extends Activity
 	SharedPreferences sharedPrefObj;
 	static String fileName="keys";
 	static String firstKey="zombie";
+	static final String prefKey_Date="100";
+	static final String prefKey_Time="101";
+	static final String prefKey_Msg="102";
+	static final String prefKey_Id="103";
 
 	// log variables
 	public static final String Tag="Message_Screener.Main";
@@ -87,7 +91,7 @@ public class Main extends Activity
         
     	// check if data exists @ keys 34,43
     	// if not store dummy String @ 34,43
-        if(!sharedPrefObj.contains("34") || !sharedPrefObj.contains("43"))
+        if((!sharedPrefObj.contains("34") || !sharedPrefObj.contains("43")) || !sharedPrefObj.contains(prefKey_Time))
         {
         	Toast.makeText(Main.this, "Preference File doesn't exist! Initialization taking place...", Toast.LENGTH_SHORT).show();
         	
@@ -95,6 +99,14 @@ public class Main extends Activity
         	editor.putString("34",firstKey);
         	editor.commit();
         	editor.putString("43",firstKey);
+        	editor.commit();
+        	editor.putString(prefKey_Time,"");
+        	editor.commit();
+        	editor.putString(prefKey_Date,"");
+        	editor.commit();
+        	editor.putString(prefKey_Msg,"");
+        	editor.commit();
+        	editor.putString(prefKey_Id,"");
         	editor.commit();
         }
 		
