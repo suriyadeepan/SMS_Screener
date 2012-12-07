@@ -37,9 +37,10 @@ public final class R {
         public static final int glossy_prev_t=0x7f020014;
         public static final int ic_action_search=0x7f020015;
         public static final int ic_launcher=0x7f020016;
-        public static final int scr_msgs_bg=0x7f020017;
-        public static final int spam_ic=0x7f020018;
-        public static final int update_butt=0x7f020019;
+        public static final int scr_msg_bg=0x7f020017;
+        public static final int scr_msgs_bg=0x7f020018;
+        public static final int spam_ic=0x7f020019;
+        public static final int update_butt=0x7f02001a;
     }
     public static final class id {
         public static final int b_home=0x7f080007;
