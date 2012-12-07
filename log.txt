@@ -1,0 +1,182 @@
+--------- beginning of /dev/log/main
+I/Message_Screener.MyReceiver( 3096): splitTimeData - Variables: 
+I/Message_Screener.MyReceiver( 3096):  d = Thu Dec 06 09:30:30 GMT+05:30 2012
+I/Message_Screener.MyReceiver( 3096): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3096): dataAtDb = Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~
+I/Message_Screener.MyReceiver( 3096): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3096): dataAtDb = 10:10:46~10:11:33~10:12:42~10:13:21~10:20:29~11:21:32~
+I/Message_Screener.MyReceiver( 3096): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3096): dataAtDb = app test no 1: key = zombie
+I/Message_Screener.MyReceiver( 3096): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3096): - You may reply~app test no 2: key = zombie
+I/Message_Screener.MyReceiver( 3096): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3096): - You may reply~app test no 3: key = zombie
+I/Message_Screener.MyReceiver( 3096): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3096): - You may reply~app test no 4: key = zombie
+I/Message_Screener.MyReceiver( 3096): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3096): - You may reply~app test 5: key = zombie
+I/Message_Screener.MyReceiver( 3096): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3096): - You may reply~app test 6: key = zombie
+I/Message_Screener.MyReceiver( 3096): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3096): - You may reply~
+I/Message_Screener.MyReceiver( 3096): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3096): dataAtDb = +918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~
+I/Message_Screener.MyReceiver( 3096): onReceive - Variables: 
+I/Message_Screener.MyReceiver( 3096): Thu Dec 06 2012
+I/Message_Screener.MyReceiver( 3096): 09:30:30
+I/Message_Screener.MyReceiver( 3096): app test 7 - keys = 0
+I/Message_Screener.MyReceiver( 3096): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3096): - You may reply
+I/Message_Screener.MyReceiver( 3096): +918082892085
+I/Message_Screener.MyReceiver( 3712): splitTimeData - Variables: 
+I/Message_Screener.MyReceiver( 3712):  d = Thu Dec 06 09:32:25 GMT+05:30 2012
+I/Message_Screener.MyReceiver( 3712): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3712): dataAtDb = Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Thu Dec 06 2012~
+I/Message_Screener.MyReceiver( 3712): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3712): dataAtDb = 10:10:46~10:11:33~10:12:42~10:13:21~10:20:29~11:21:32~09:30:30~
+I/Message_Screener.MyReceiver( 3712): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3712): dataAtDb = app test no 1: key = zombie
+I/Message_Screener.MyReceiver( 3712): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3712): - You may reply~app test no 2: key = zombie
+I/Message_Screener.MyReceiver( 3712): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3712): - You may reply~app test no 3: key = zombie
+I/Message_Screener.MyReceiver( 3712): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3712): - You may reply~app test no 4: key = zombie
+I/Message_Screener.MyReceiver( 3712): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3712): - You may reply~app test 5: key = zombie
+I/Message_Screener.MyReceiver( 3712): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3712): - You may reply~app test 6: key = zombie
+I/Message_Screener.MyReceiver( 3712): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3712): - You may reply~app test 7 - keys = 0
+I/Message_Screener.MyReceiver( 3712): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3712): - You may reply~
+I/Message_Screener.MyReceiver( 3712): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3712): dataAtDb = +918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~
+I/Message_Screener.MyReceiver( 3712): onReceive - Variables: 
+I/Message_Screener.MyReceiver( 3712): Thu Dec 06 2012
+I/Message_Screener.MyReceiver( 3712): 09:32:25
+I/Message_Screener.MyReceiver( 3712): app test 8 - keys = 0
+I/Message_Screener.MyReceiver( 3712): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3712): - You may reply
+I/Message_Screener.MyReceiver( 3712): +918082892085
+I/Message_Screener.MyReceiver( 3784): splitTimeData - Variables: 
+I/Message_Screener.MyReceiver( 3784):  d = Thu Dec 06 09:33:15 GMT+05:30 2012
+I/Message_Screener.MyReceiver( 3784): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3784): dataAtDb = Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Thu Dec 06 2012~Thu Dec 06 2012~
+I/Message_Screener.MyReceiver( 3784): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3784): dataAtDb = 10:10:46~10:11:33~10:12:42~10:13:21~10:20:29~11:21:32~09:30:30~09:32:25~
+I/Message_Screener.MyReceiver( 3784): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3784): dataAtDb = app test no 1: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test no 2: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test no 3: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test no 4: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test 5: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test 6: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test 7 - keys = 0
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test 8 - keys = 0
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~
+I/Message_Screener.MyReceiver( 3784): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3784): dataAtDb = +918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~
+I/Message_Screener.MyReceiver( 3784): onReceive - Variables: 
+I/Message_Screener.MyReceiver( 3784): Thu Dec 06 2012
+I/Message_Screener.MyReceiver( 3784): 09:33:15
+I/Message_Screener.MyReceiver( 3784): app test 9 - keys = 1
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply
+I/Message_Screener.MyReceiver( 3784): +918082892085
+I/Message_Screener.MyReceiver( 3784): splitTimeData - Variables: 
+I/Message_Screener.MyReceiver( 3784):  d = Thu Dec 06 09:33:36 GMT+05:30 2012
+I/Message_Screener.MyReceiver( 3784): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3784): dataAtDb = Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Thu Dec 06 2012~Thu Dec 06 2012~Thu Dec 06 2012~
+I/Message_Screener.MyReceiver( 3784): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3784): dataAtDb = 10:10:46~10:11:33~10:12:42~10:13:21~10:20:29~11:21:32~09:30:30~09:32:25~09:33:15~
+I/Message_Screener.MyReceiver( 3784): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3784): dataAtDb = app test no 1: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test no 2: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test no 3: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test no 4: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test 5: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test 6: key = zombie
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test 7 - keys = 0
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test 8 - keys = 0
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~app test 9 - keys = 1
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply~
+I/Message_Screener.MyReceiver( 3784): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3784): dataAtDb = +918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~
+I/Message_Screener.MyReceiver( 3784): onReceive - Variables: 
+I/Message_Screener.MyReceiver( 3784): Thu Dec 06 2012
+I/Message_Screener.MyReceiver( 3784): 09:33:36
+I/Message_Screener.MyReceiver( 3784): skldfjslkdfjkldfjas
+I/Message_Screener.MyReceiver( 3784): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3784): - You may reply
+I/Message_Screener.MyReceiver( 3784): +918082892085
+--------- beginning of /dev/log/system
+I/Message_Screener.MyReceiver( 3928): * Keys At Database: 
+I/Message_Screener.MyReceiver( 3928): Keys[0]zombie
+I/Message_Screener.MyReceiver( 3928): Keys[1]dial
+I/Message_Screener.MyReceiver( 3928): Keys[2]local
+I/Message_Screener.MyReceiver( 3928): Keys[3]std
+I/Message_Screener.MyReceiver( 3928): * Ids At Database: 
+I/Message_Screener.MyReceiver( 3928): Ids[0]zombie
+I/Message_Screener.MyReceiver( 3928): Ids[1]
+I/Message_Screener.MyReceiver( 3928): Ids[2]
+I/Message_Screener.MyReceiver( 3928): Ids[3]
+I/Message_Screener.MyReceiver( 3928): Ids[4]BA-
+I/Message_Screener.MyReceiver( 3928): Ids[5]BT-
+I/Message_Screener.MyReceiver( 3928): ** ids[i] = 
+I/Message_Screener.MyReceiver( 3928): ** ids[i] = 
+I/Message_Screener.MyReceiver( 3928): ** ids[i] = 
+I/Message_Screener.MyReceiver( 3928): splitTimeData - Variables: 
+I/Message_Screener.MyReceiver( 3928):  d = Thu Dec 06 09:46:37 GMT+05:30 2012
+I/Message_Screener.MyReceiver( 3928): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3928): dataAtDb = Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Wed Dec 05 2012~Thu Dec 06 2012~Thu Dec 06 2012~Thu Dec 06 2012~Thu Dec 06 2012~
+I/Message_Screener.MyReceiver( 3928): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3928): dataAtDb = 10:10:46~10:11:33~10:12:42~10:13:21~10:20:29~11:21:32~09:30:30~09:32:25~09:33:15~09:33:36~
+I/Message_Screener.MyReceiver( 3928): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3928): dataAtDb = app test no 1: key = zombie
+I/Message_Screener.MyReceiver( 3928): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3928): - You may reply~app test no 2: key = zombie
+I/Message_Screener.MyReceiver( 3928): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3928): - You may reply~app test no 3: key = zombie
+I/Message_Screener.MyReceiver( 3928): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3928): - You may reply~app test no 4: key = zombie
+I/Message_Screener.MyReceiver( 3928): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3928): - You may reply~app test 5: key = zombie
+I/Message_Screener.MyReceiver( 3928): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3928): - You may reply~app test 6: key = zombie
+I/Message_Screener.MyReceiver( 3928): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3928): - You may reply~app test 7 - keys = 0
+I/Message_Screener.MyReceiver( 3928): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3928): - You may reply~app test 8 - keys = 0
+I/Message_Screener.MyReceiver( 3928): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3928): - You may reply~app test 9 - keys = 1
+I/Message_Screener.MyReceiver( 3928): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3928): - You may reply~skldfjslkdfjkldfjas
+I/Message_Screener.MyReceiver( 3928): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3928): - You may reply~
+I/Message_Screener.MyReceiver( 3928): updateDB- Variables: 
+I/Message_Screener.MyReceiver( 3928): dataAtDb = +918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~+918082892085~
+I/Message_Screener.MyReceiver( 3928): onReceive - Variables: 
+I/Message_Screener.MyReceiver( 3928): Thu Dec 06 2012
+I/Message_Screener.MyReceiver( 3928): 09:46:37
+I/Message_Screener.MyReceiver( 3928): App test 10 - keys = 0
+I/Message_Screener.MyReceiver( 3928): - seeker1.0.7.8.6@gmail.com
+I/Message_Screener.MyReceiver( 3928): - You may reply
+I/Message_Screener.MyReceiver( 3928): +918082892085

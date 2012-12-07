@@ -44,7 +44,7 @@ public class ScreenedMsgs extends Activity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        
+        Log.i(TAG, "OnCreate - entered");
         
         	// setup fullscreen
         /***************************************************/
@@ -53,10 +53,17 @@ public class ScreenedMsgs extends Activity
         		WindowManager.LayoutParams.FLAG_FULLSCREEN);
         /*************************************************/
         
+        Log.i(TAG, "OnCreate - full screen");
+        
         setContentView(R.layout.screened_msgs);
+        
+        Log.i(TAG, "OnCreate - Set layout");
         
         setupViews();
         
+        Log.i(TAG, "OnCreate - Set Views");
+        
+        Log.i(TAG, "OnCreate - Entering retreiveDataFromDB");
         
         retreiveDataFromDB();
         
@@ -65,7 +72,8 @@ public class ScreenedMsgs extends Activity
         // testing Shared pref's
         
         /*
-        
+        if(sharedPrefObj.contains("101"))
+        {
         sharedPrefObj=getSharedPreferences(fileName,0);
     	String[] dateAtDB=sharedPrefObj.getString(prefKey_Date, "Unable to retreive keys!").split("~");
     	String[] timeAtDB=sharedPrefObj.getString(prefKey_Time, "Unable to retreive ID's!").split("~");
@@ -79,9 +87,11 @@ public class ScreenedMsgs extends Activity
     	
     	Log.i(TAG, "onCreate - Variables\n Time= "+timeAtDB[1]+"\n Date= "+dateAtDB[1]+
     			"\n Msg = "+msgAtDB+"\n Id = "+idAtDB[1]);
-        
-        
+        }
         */
+        
+        
+        
         
         
         /*************************************************************/
@@ -104,23 +114,38 @@ public class ScreenedMsgs extends Activity
     
     public void retreiveDataFromDB()
     {
-        
+    	Log.i(TAG, "retreiveDataFromDB - entered");
+    	
         sharedPrefObj=getSharedPreferences(fileName,0);
+        
+        Log.i(TAG, "retreiveDataFromDB - sharedPref obj created");
+        
+        
     	String[] dateAtDB=sharedPrefObj.getString(prefKey_Date, "Unable to retreive keys!").split("~");
     	String[] timeAtDB=sharedPrefObj.getString(prefKey_Time, "Unable to retreive ID's!").split("~");
     	String[] idAtDB=sharedPrefObj.getString(prefKey_Id, "Unable to retreive ID's!").split("~");
     	String[] msgAtDB=sharedPrefObj.getString(prefKey_Msg, "Unable to retreive ID's!").split("~");
     	
+    	Log.i(TAG, "retreiveDataFromDB - variables");
+    	Log.i(TAG,"dateAtDB: \n"+dateAtDB[index]);
+    	Log.i(TAG,"timeAtDB: \n"+timeAtDB[index]);
+    	Log.i(TAG,"idAtDB: \n"+idAtDB[index]);
+    	Log.i(TAG,"msgAtDB: \n"+msgAtDB[index]);
+    	Log.i(TAG,"index: \n "+index);
+    	
+    	
     	maxIndex=dateAtDB.length-1;
     	
-    	timeField.setText("  Time      : "+timeAtDB[index]);
-    	dateField.setText("  Date      : "+dateAtDB[index]);
-    	 msgField.setText("  Message   : "+msgAtDB[index]);
-    	  idField.setText("  Sender ID : "+idAtDB[index]);
+    	Log.i(TAG,"maxIndex: "+Integer.toString(maxIndex));
     	
-    	Log.i(TAG, "onCreate - Variables\n Time= "+timeAtDB[1]+"\n Date= "+dateAtDB[1]+
+    	timeField.setText(timeAtDB[index]);
+    	dateField.setText(" "+dateAtDB[index]+" ");
+    	 msgField.setText(" "+msgAtDB[index]);
+    	  idField.setText(" "+idAtDB[index]+" ");
+    	
+    	/*Log.i(TAG, "onCreate - Variables\n Time= "+timeAtDB[1]+"\n Date= "+dateAtDB[1]+
     			"\n Msg = "+msgAtDB+"\n Id = "+idAtDB[1]);
-        
+        */
         
     }
   
@@ -128,7 +153,7 @@ public class ScreenedMsgs extends Activity
     
 	private void setupViews()
     {
-    	
+		    	
     	timeField=(TextView)findViewById(R.id.t_time);
     	dateField=(TextView)findViewById(R.id.t_date);
     	msgField=(TextView)findViewById(R.id.t_msg_content);
@@ -158,7 +183,7 @@ public class ScreenedMsgs extends Activity
 		});
 		
     	
-    	previousButton=(Button)findViewById(R.id.b_previous);
+    	previousButton=(Button)findViewById(R.id.b_prev);
     	previousButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -180,7 +205,7 @@ public class ScreenedMsgs extends Activity
     	
     	
     	// setup back button
-    	backButton=(Button)findViewById(R.id.b_back);
+    	backButton=(Button)findViewById(R.id.b_home);
     	
     	backButton.setOnClickListener(new View.OnClickListener() {
 			
@@ -190,6 +215,8 @@ public class ScreenedMsgs extends Activity
 				
 			}
 		});
+		
+		
 	}// end of setupViews() method
 
 

@@ -79,6 +79,17 @@ public class MyReceiver extends BroadcastReceiver
     		String[] keys=keysAtDb.split(" ");
     		String[] ids=idsAtDb.split(" ");
     		
+    		Log.i(TAG, "* Keys At Database: \n");
+    		
+    		for(int i=0;i<keys.length;i++)
+    			Log.i(TAG,"Keys["+Integer.toString(i)+"]"+keys[i]);
+    		
+    		Log.i(TAG, "* Ids At Database: \n");
+    		
+    		for(int i=0;i<ids.length;i++)
+    			Log.i(TAG,"Ids["+Integer.toString(i)+"]"+ids[i]);
+    		
+    		
     		boolean msgStatus=false;
     		
     		
@@ -87,13 +98,23 @@ public class MyReceiver extends BroadcastReceiver
     		for(int i=0;i<keys.length;i++)
     		{
     			if(msgContent.contains(keys[i]))
-    				msgStatus=true;
+    				{
+    					Log.i(TAG, "** keys[i] = "+keys[i]);
+    					msgStatus=true;
+    					break;
+    				}
+    			
+    			
     		}
     		
     		for(int i=0;i<ids.length;i++)
     		{
     			if(senderId.contains(ids[i]))
-    				msgStatus=true;
+    				{
+    				Log.i(TAG, "** ids[i] = "+ids[i]);
+    					msgStatus=true;
+    					break;
+    				}
     		}
     		
     		

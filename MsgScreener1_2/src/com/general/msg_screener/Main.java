@@ -141,7 +141,20 @@ public class Main extends Activity
 				
 				// if atleast anyone of the Edittexts is not empty
 				//  proceed
-				if( !msgId.getText().toString().equals("") || !msgKeys.getText().toString().equals("") )
+				
+				smsKeys=msgKeys.getText().toString();
+				smsId=msgId.getText().toString();
+				// removing empty spaces
+	        	/*smsKeys.replaceAll("\\s","");
+	        	smsId.replaceAll("\\s","");
+	        	*/
+	        	Log.i(Tag,"****************\n");
+	        	Log.i(Tag, "smsKeys: -"+smsKeys+"-");
+	        	Log.i(Tag, "smsId: -"+smsId+"-");
+	        	Log.i(Tag,"****************\n");
+	        	
+				
+				if( !smsId.contains(" ") && !smsKeys.contains(" ") )
 				{
 					
 				// get the text @ Edittexts
@@ -151,9 +164,9 @@ public class Main extends Activity
 	        	
 	        	Log.i(Tag, "setupViews-updateButton-onClick- Variables: \n smsId = "+smsId+"\n smsKeys =  "+smsKeys);
 	        	
-	        	// removing empty spaces
-	        	smsKeys.replace(" ","");
-	        	smsId.replace(" ","");
+	        	
+	        	
+	        	
 	        	
 	        	// append sms key to preference file
 	        	// instatntiate sharedPrefObj

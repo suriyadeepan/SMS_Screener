@@ -19,5 +19,9 @@
     <string name="previous">Previous</string>
     <string name="one">1</string>
     <string name="page_num">Page 1</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="sender_id">0000000000</string>
+    <string name="some_msg">"the message content goes here... the message content goes here...  the message content goes here...  the message content goes here...  the message content goes here... "</string>
 
 </resources>
