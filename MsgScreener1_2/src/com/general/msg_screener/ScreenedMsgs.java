@@ -67,47 +67,7 @@ public class ScreenedMsgs extends Activity
         
         retreiveDataFromDB();
         
-        /*************************************************************/
         
-        // testing Shared pref's
-        
-        /*
-        if(sharedPrefObj.contains("101"))
-        {
-        sharedPrefObj=getSharedPreferences(fileName,0);
-    	String[] dateAtDB=sharedPrefObj.getString(prefKey_Date, "Unable to retreive keys!").split("~");
-    	String[] timeAtDB=sharedPrefObj.getString(prefKey_Time, "Unable to retreive ID's!").split("~");
-    	String[] idAtDB=sharedPrefObj.getString(prefKey_Id, "Unable to retreive ID's!").split("~");
-    	String[] msgAtDB=sharedPrefObj.getString(prefKey_Msg, "Unable to retreive ID's!").split("~");
-    	
-    	timeField.setText("  Time      : "+timeAtDB[index]);
-    	dateField.setText("  Date      : "+dateAtDB[index]);
-    	 msgField.setText("  Message   : "+msgAtDB[index]);
-    	  idField.setText("  Sender ID : "+idAtDB[index]);
-    	
-    	Log.i(TAG, "onCreate - Variables\n Time= "+timeAtDB[1]+"\n Date= "+dateAtDB[1]+
-    			"\n Msg = "+msgAtDB+"\n Id = "+idAtDB[1]);
-        }
-        */
-        
-        
-        
-        
-        
-        /*************************************************************/
-        
-        
-        /*
-        try {
-        	
-			readFromFile();
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-        */
         
     }// end of onCreate() method...
     
@@ -127,25 +87,23 @@ public class ScreenedMsgs extends Activity
     	String[] msgAtDB=sharedPrefObj.getString(prefKey_Msg, "Unable to retreive ID's!").split("~");
     	
     	Log.i(TAG, "retreiveDataFromDB - variables");
-    	Log.i(TAG,"dateAtDB: \n"+dateAtDB[index]);
-    	Log.i(TAG,"timeAtDB: \n"+timeAtDB[index]);
-    	Log.i(TAG,"idAtDB: \n"+idAtDB[index]);
-    	Log.i(TAG,"msgAtDB: \n"+msgAtDB[index]);
-    	Log.i(TAG,"index: \n "+index);
+    	Log.i(TAG,"dateAtDB: \n"+dateAtDB[maxIndex-index]);
+    	Log.i(TAG,"timeAtDB: \n"+timeAtDB[maxIndex-index]);
+    	Log.i(TAG,"idAtDB: \n"+idAtDB[maxIndex-index]);
+    	Log.i(TAG,"msgAtDB: \n"+msgAtDB[maxIndex-index]);
+    	Log.i(TAG,"index: \n "+(maxIndex-index));
     	
     	
     	maxIndex=dateAtDB.length-1;
     	
     	Log.i(TAG,"maxIndex: "+Integer.toString(maxIndex));
     	
-    	timeField.setText(timeAtDB[index]);
-    	dateField.setText(" "+dateAtDB[index]+" ");
-    	 msgField.setText(" "+msgAtDB[index]);
-    	  idField.setText(" "+idAtDB[index]+" ");
+    	timeField.setText(timeAtDB[maxIndex-index]);
+    	dateField.setText(" "+dateAtDB[maxIndex-index]+" ");
+    	 msgField.setText(" "+msgAtDB[maxIndex-index]);
+    	  idField.setText(" "+idAtDB[maxIndex-index]+" ");
     	
-    	/*Log.i(TAG, "onCreate - Variables\n Time= "+timeAtDB[1]+"\n Date= "+dateAtDB[1]+
-    			"\n Msg = "+msgAtDB+"\n Id = "+idAtDB[1]);
-        */
+    	
         
     }
   
@@ -249,81 +207,7 @@ public class ScreenedMsgs extends Activity
 	
 	
 	  
-	/*
-	    private void readFromFile() throws IOException 
-	    {
-	    	String fileContent="";
-	    	StringBuffer fileContentBuffer=new StringBuffer(fileContent);
-	    	
-	    	try {
-	    	    // open the file for reading
-	    	    InputStream instream = openFileInput("screened-msgs.dat");
-	    	 
-	    	    // if file the available for reading
-	    	    if (instream!=null) {
-	    	      // prepare the file for reading
-	    	      InputStreamReader inputreader = new InputStreamReader(instream);
-	    	      BufferedReader buffreader = new BufferedReader(inputreader);
-	    	                 
-	    	      String line;
-	    	 
-	    	      scrMsgs.setText("\n\n\n");
-	    	      
-	    	      // read every line of the file into the line-variable, on line at the time
-	    	      while (( line = buffreader.readLine()) != null) {
-	    	        // do something with the settings from the file
-	    	    	  // scrMsgs.append(line);
-	    	    	  fileContentBuffer.append(line);
-	    	    	  
-	    	      }
-	    	 
-	    	    } else{
-	    	    	scrMsgs.setText("No such file dude!");
-	    	    }
-	    	     
-	    	    // close the file again       
-	    	    instream.close();
-	    	
-	    	    
-	    	    
-	    	    
-	    	    fileContent=fileContentBuffer.toString();
-	    	    
-	    	    String temp=fileContent;
-	    	    
-	    	    scrMsgs.append(fileContent);
-	    	    
-	    	    // START COMMENT HERE
-	    	    /*
-	    	    int msgNum=temp.length()-temp.replace("@","").length();
-	    	    
-	    	    int offset = 0;
-	    	    
-	    	    for(int i=0;i<msgNum;i++)
-	    	    {
-	    	    
-	    	    int pos1=fileContent.indexOf('!',offset);
-	    	    int pos2=fileContent.indexOf('!',pos1+1);
-	    	    
-	    	    String singleMsg=fileContent.substring(pos1+1,pos2-1);
-	    	    
-	    	    scrMsgs.setText(singleMsg);
-	    	    scrMsgs.setText("\n\n");
-	    	    
-	    	    offset=pos2;
-	    	    
-	    	    }
-	    	    // END COMMENT HERE
-	    	    
-	    	    
-	    	  
-	    	    
-	    	  } catch (java.io.FileNotFoundException e) {
-	    	    // do something if the myfilename.txt does not exits
-	    	  }
-			
-			
-		}*/
+	
 
 	
 	
